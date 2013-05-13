@@ -1,11 +1,13 @@
 class Blog::Post < ActiveRecord::Base
-  
-  self.table_name = :blog_posts
+    rss_me
+
+    self.table_name = :blog_posts
 
   # -- Attributes -----------------------------------------------------------
   attr_accessor :tag_names,
                 :category_ids
   
+  alias_attribute :body, :content
   # -- Relationships --------------------------------------------------------
   has_many :comments, :dependent => :destroy
   has_many :taggings, :dependent => :destroy

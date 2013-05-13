@@ -16,7 +16,7 @@ class Admin::Blog::PostsController < Admin::Blog::BaseController
   def new
     render
   end
-  
+
   def create
     @post.save!
     flash[:notice] = 'Blog Post created'

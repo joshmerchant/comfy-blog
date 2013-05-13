@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     get '/'                   => 'posts#index', :as => :blog_posts
     get 'tag/:tag'            => 'posts#index', :as => :tagged_blog_posts
     get 'category/:category'  => 'posts#index', :as => :categorized_blog_posts
+    get '/feed'               => 'posts#rss', :as => :rss
     
     with_options :constraints => { :year => /\d{4}/, :month => /\d{1,2}/ } do |o|
       o.get ':year'               => 'posts#index', :as => :year_blog_posts
