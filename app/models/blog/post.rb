@@ -2,6 +2,9 @@ class Blog::Post < ActiveRecord::Base
     rss_me
 
     self.table_name = :blog_posts
+    Blog::Post.rss_options[:title] = "Measurely Blog"
+    Blog::Post.rss_options[:description] = "Strategize your marketing efforts. Learn about how measurely and other great tools can help reach your goals!"
+    Blog::Post.rss_options[:base_url] = "http://measurely.com/blog"
 
   # -- Attributes -----------------------------------------------------------
   attr_accessor :tag_names,
