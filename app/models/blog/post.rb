@@ -6,7 +6,7 @@ class Blog::Post < ActiveRecord::Base
     Blog::Post.rss_options[:description] = "Strategize your marketing efforts. Learn about how measurely and other great tools can help reach your goals!"
     Blog::Post.rss_options[:base_url] = "http://measurely.com/blog"
 
-    BlogPost.rss_options[:link_format] = "http://measurely.com/blog/:id"
+    Blog::Post.rss_options[:link_format] = "http://measurely.com/blog/:id"
   # -- Attributes -----------------------------------------------------------
   attr_accessor :tag_names,
                 :category_ids
